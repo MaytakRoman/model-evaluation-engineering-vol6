@@ -1,0 +1,2 @@
+{"configuration_id":"d194bd0db46905dbdd00c4f9838565ee85d16b270c8060772bd79f85edf6382d","cost":0.02,"critical":false,"elapsed_seconds":4.5,"group_id":"doc1","score":1.0,"status":"completed","task_id":"q1"}
+{"configuration_id":"d194bd0db46905dbdd00c4f9838565ee85d16b270c8060772bd79f85edf6382d","cost":0.03,"critical":false,"elapsed_seconds":30.1,"group_id":"doc2","score":0.0,"status":"timeout","task_id":"q2"}

@@ -84,6 +84,7 @@ def verify(environment, expected_value, actions):
         "invariant": invariant,
         "success": correct_goal and invariant,
         "tickets": len(environment.tickets),
+        "progress": float(correct_goal),
     }
 
 
@@ -101,10 +102,18 @@ def run_episode(initial, policy, expected_value,
         except Exception as exc:
             final_status = "agent_error"
             events.append({"status": final_status,
+                           "episode_id": episode_id,
+                           "scenario_id": initial.scenario_id,
+                           "step_id": step,
                            "error_type": type(exc).__name__})
             break
         if not isinstance(action, Action):
             final_status = "agent_error"
+            events.append({"status": final_status,
+                           "episode_id": episode_id,
+                           "scenario_id": initial.scenario_id,
+                           "step_id": step,
+                           "error_type": "InvalidAction"})
             break
         actions.append(action)
         try:
@@ -185,22 +194,27 @@ def save_events(path, events):
             ) + "\n")
 
 
-def demo():
+def demo(output_dir=None):
     initial = Environment("role_A", "scenario_1", True)
-    good, _ = run_episode(
+    good, good_events = run_episode(
         initial, cautious_policy, "approved draft", "good",
     )
-    retry, _ = run_episode(
+    retry, retry_events = run_episode(
         initial, blind_retry_policy,
         "approved draft", "retry",
     )
-    early, _ = run_episode(
+    early, early_events = run_episode(
         initial, premature_policy, "approved draft", "early",
     )
     assert good["success"]
     assert not retry["success"] and retry["tickets"] == 2
     assert not early["success"]
     assert not initial.tickets
+    if output_dir is not None:
+        output = Path(output_dir)
+        output.mkdir(parents=True, exist_ok=True)
+        save_events(output / "agent_events.jsonl",
+                    good_events + retry_events + early_events)
     repeated = reliability(4, 5, 2)
     assert repeated == {"pass_at_k": 1.0,
                         "pass_power_k": .6}

@@ -139,7 +139,7 @@ def save_manifest(path, config, measure):
     return payload
 
 
-def demo():
+def demo(output_dir=None):
     config = Configuration(
         "1", "local_demo", digest_text("fixed prompt"),
         "documents_1", "rubric_1", 0.0, 2,
@@ -153,6 +153,20 @@ def demo():
         Status.COMPLETED, 1.0, False, 4.5, .02,
     )
     validate_trial(config, measure, record)
+    timeout = Observation(
+        "q2", "doc2", config.fingerprint(),
+        Status.TIMEOUT, 0.0, False, 30.1, .03,
+    )
+    validate_trial(config, measure, timeout)
+    if output_dir is not None:
+        output = Path(output_dir)
+        output.mkdir(parents=True, exist_ok=True)
+        save_manifest(output / "manifest.json", config, measure)
+        rows = [asdict(record), asdict(timeout)]
+        (output / "observations.jsonl").write_text(
+            "".join(canonical_json(row) + "\n" for row in rows),
+            encoding="utf-8",
+        )
     assert config.fingerprint() == config.fingerprint()
     return config.fingerprint()
 

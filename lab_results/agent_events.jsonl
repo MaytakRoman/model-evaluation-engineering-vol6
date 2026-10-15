@@ -1,0 +1,7 @@
+{"action": {"arguments": {"value": "approved draft"}, "name": "create"}, "episode_id": "good", "observation": {"status": "uncertain"}, "scenario_id": "scenario_1", "status": "uncertain", "step_id": 0}
+{"action": {"arguments": {}, "name": "inspect"}, "episode_id": "good", "observation": [{"owner": "role_A", "scenario_id": "scenario_1", "status": "draft", "ticket_id": "1", "value": "approved draft"}], "scenario_id": "scenario_1", "status": "ok", "step_id": 1}
+{"action": {"arguments": {}, "name": "finish"}, "episode_id": "good", "observation": {"finished": true}, "scenario_id": "scenario_1", "status": "ok", "step_id": 2}
+{"action": {"arguments": {"value": "approved draft"}, "name": "create"}, "episode_id": "retry", "observation": {"status": "uncertain"}, "scenario_id": "scenario_1", "status": "uncertain", "step_id": 0}
+{"action": {"arguments": {"value": "approved draft"}, "name": "create"}, "episode_id": "retry", "observation": {"owner": "role_A", "scenario_id": "scenario_1", "status": "draft", "ticket_id": "2", "value": "approved draft"}, "scenario_id": "scenario_1", "status": "ok", "step_id": 1}
+{"action": {"arguments": {}, "name": "finish"}, "episode_id": "retry", "observation": {"finished": true}, "scenario_id": "scenario_1", "status": "ok", "step_id": 2}
+{"action": {"arguments": {}, "name": "finish"}, "episode_id": "early", "observation": {"finished": true}, "scenario_id": "scenario_1", "status": "ok", "step_id": 0}

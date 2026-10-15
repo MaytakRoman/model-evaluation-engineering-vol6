@@ -1,0 +1,23 @@
+{
+  "audit": {
+    "assignments": {
+      "A": 1,
+      "B": 1
+    },
+    "missing_outcomes": [
+      "u2"
+    ],
+    "outcomes": 1,
+    "srm": {
+      "chi_square": 0.0,
+      "p_value_approx": 1.0
+    }
+  },
+  "comparison": {
+    "effect": 0.07999999999999996,
+    "lower": 0.0085755132053313,
+    "method": "independent Wald approximation",
+    "upper": 0.15142448679466863
+  },
+  "total_variation": 0.20000000000000004
+}

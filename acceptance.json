@@ -1,0 +1,8 @@
+{
+  "id": "educational-v1",
+  "expected_tasks": 600,
+  "family_alpha": 0.05,
+  "quality_min": 0.85,
+  "risk_max": 0.01,
+  "timely_min": 0.94
+}

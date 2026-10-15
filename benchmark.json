@@ -1,0 +1,12 @@
+{
+  "groups": {
+    "acceptance": 1,
+    "development": 1
+  },
+  "protocol_version": "1",
+  "sha256": "946b5d556da42cd19d3effe7511727ca142a0a388ec28650bf11982b7faef780",
+  "tasks": {
+    "acceptance": 1,
+    "development": 1
+  }
+}

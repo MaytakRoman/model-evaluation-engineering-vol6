@@ -78,6 +78,16 @@ def parse_result(raw, task):
     return result
 
 
+def evaluate_result(raw, task):
+    try:
+        result = parse_result(raw, task)
+    except (ValueError, TypeError) as exc:
+        return {"status": "invalid_judge_output",
+                "task_id": task.task_id,
+                "error_type": type(exc).__name__}
+    return {"status": "valid", "result": result}
+
+
 def cache_key(task, judge_version, decoding):
     payload = {
         "input": judge_input(task),
