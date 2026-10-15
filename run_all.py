@@ -12,7 +12,10 @@ def main():
     reports = {}
     for name in MODULES:
         module = importlib.import_module("programs." + name)
-        reports[name] = module.demo()
+        if name in {"protocol", "agent_eval"}:
+            reports[name] = module.demo(output_dir=output)
+        else:
+            reports[name] = module.demo()
     from programs.acceptance_eval import evaluate
     records = [json.loads(line) for line in (
         ROOT / "data/acceptance_cases.jsonl"
