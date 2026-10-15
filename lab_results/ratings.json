@@ -1,0 +1,23 @@
+{
+  "balanced": {
+    "agreement": 0.8,
+    "expected": 0.5,
+    "kappa": 0.6000000000000001,
+    "total": 100
+  },
+  "fit": {
+    "converged": true,
+    "iterations": 44,
+    "parameters": {
+      "A": 0.40453053685430307,
+      "B": -0.40453053685430307
+    },
+    "penalty": 0.02
+  },
+  "rare": {
+    "agreement": 0.9,
+    "expected": 0.9049999999999999,
+    "kappa": -0.05263157894736725,
+    "total": 100
+  }
+}

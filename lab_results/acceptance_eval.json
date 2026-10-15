@@ -1,0 +1,21 @@
+{
+  "alpha_per_bound": 0.016666666666666666,
+  "checks": {
+    "A1": true,
+    "Q1": true,
+    "R1": true,
+    "S1": true,
+    "T1": true
+  },
+  "cost_per_accepted": 1.3043478260869565,
+  "cost_total": 720.0,
+  "critical_events": 0,
+  "quality_lower": 0.8931398143522173,
+  "quality_successes": 552,
+  "release_decision": "separate authorized review",
+  "risk_upper": 0.006800677616008909,
+  "statistical_and_technical_pass": true,
+  "tasks": 600,
+  "timely_lower": 0.951443133246678,
+  "timely_successes": 582
+}
