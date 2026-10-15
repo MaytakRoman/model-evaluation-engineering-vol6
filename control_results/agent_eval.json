@@ -1,0 +1,36 @@
+{
+  "early": {
+    "actions": 1,
+    "episode_id": "early",
+    "goal": false,
+    "invariant": true,
+    "scenario_id": "scenario_1",
+    "status": "goal_not_met",
+    "success": false,
+    "tickets": 0
+  },
+  "good": {
+    "actions": 3,
+    "episode_id": "good",
+    "goal": true,
+    "invariant": true,
+    "scenario_id": "scenario_1",
+    "status": "success",
+    "success": true,
+    "tickets": 1
+  },
+  "reliability": {
+    "pass_at_k": 1.0,
+    "pass_power_k": 0.6
+  },
+  "retry": {
+    "actions": 3,
+    "episode_id": "retry",
+    "goal": false,
+    "invariant": false,
+    "scenario_id": "scenario_1",
+    "status": "policy_violation",
+    "success": false,
+    "tickets": 2
+  }
+}
